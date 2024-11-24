@@ -144,5 +144,3 @@ const data = {
         "Quý": "Dũng Tuyền"
     }
 }
-
-export { data };
