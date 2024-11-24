@@ -1,4 +1,4 @@
-//import { data } from "/data/tyngoluuchu.js";  // Kết nối với data từ file tyngoluuchu.js
+import { data } from "/data/tyngoluuchu.js";  // Kết nối với data từ file tyngoluuchu.js
 // Danh sách Thiên Can và Địa Chi
 const CAN = ["Canh", "Tân", "Nhâm", "Quý", "Giáp", "Ất", "Bính", "Đinh", "Mậu", "Kỷ"];
 const CHI = ["Tý", "Sửu", "Dần", "Mão", "Thìn", "Tỵ", "Ngọ", "Mùi", "Thân", "Dậu", "Tuất", "Hợi"];
