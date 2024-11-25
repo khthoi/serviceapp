@@ -249,14 +249,14 @@ function main() {
 
     // Tra cứu thông tin từ dữ liệu
     const info = getInfoFromData(GioDiaChi, thienCan);
-    document.getElementById("infoTyluuchu").innerHTML = `Huyệt Mở Theo Tý Ngọ Lưu Chú: ${info}`;
+    document.getElementById("infoTyluuchu").innerHTML = `Huyệt Mở Theo Tý Ngọ Lưu Chú:<br>${info}`;
 
     const info2 = getInfoFromData(NgayCanChi, GioDiaChi);
-    document.getElementById("infoHuyetmo").innerHTML = `Huyệt Mở Theo Linh Quy Bát Pháp: ${info2}`;
+    document.getElementById("infoHuyetmo").innerHTML = `Huyệt Mở Theo Linh Quy Bát Pháp:<br> ${info2}`;
 
     // Tính huyệt đóng và hiển thị kết quả
     const huyetDong = getHuyetDong(info2);
-    document.getElementById("infoHuyetdong").innerHTML = `Huyệt Đóng Theo Linh Quy Bát Pháp: ${huyetDong}`;
+    document.getElementById("infoHuyetdong").innerHTML = `Huyệt Đóng Theo Linh Quy Bát Pháp:<br> ${huyetDong}`;
 
     // Xét ngày âm hiện tại
     let lunarDate = clsSolar2Lunar.convertSolar2Lunar(day, month, year, timeZone);
