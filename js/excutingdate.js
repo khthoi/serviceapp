@@ -82,9 +82,13 @@ function main() {
     // Tính Địa Chi cho giờ hiện tại
     const GioDiaChi = getCanChiByHour();
 
+    // Định dạng phút và giây về dạng "02" nếu giá trị nhỏ hơn 10
+    const formattedMinute = String(minute).padStart(2, '0');
+    //const formattedSecond = String(second).padStart(2, '0');
+
     // In ra thông tin ngày và giờ vào các phần tử HTML
     document.getElementById("currentDate").innerHTML = `Ngày ${day} Tháng ${month} Năm ${year}<br><br> Tức ngày ${thienCan} ${diaChi}`;
-    document.getElementById("currentHour").innerHTML = `Giờ hiện tại: ${hours}:${minute} - Tức Giờ ${GioDiaChi}`;
+    document.getElementById("currentHour").innerHTML = `${hours}:${formattedMinute} - Tức Giờ ${GioDiaChi}`;
 
     // Tra cứu thông tin từ dữ liệu
     const info = getInfoFromData(GioDiaChi, thienCan);
@@ -97,6 +101,7 @@ function main() {
     const huyetDong = getHuyetDong(info2);
     document.getElementById("infoHuyetdong").innerHTML = `Huyệt Đóng Theo Linh Quy Bát Pháp: ${huyetDong}`;
 }
+
 
 // Gọi hàm chính
 main();
