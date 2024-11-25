@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Đặt giờ hiện tại làm mặc định trong danh sách giờ
     const currentHour = today.getHours(); // Lấy giờ hiện tại (0 - 23)
-    hourSelect.value = currentHour + 1; // Đổi sang định dạng 1 - 24
+    hourSelect.value = currentHour; // Đổi sang định dạng 1 - 24
 });
 
 // Danh sách Thiên Can và Địa Chi
