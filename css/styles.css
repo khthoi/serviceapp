@@ -48,7 +48,8 @@ body {
 }
 @media (min-width: 200px) and (max-width: 420px) {
     .autosize {
-        font-size: 12px;
+        font-size: 14px;
+        font-weight: 500;
     }
 
     .logo {
