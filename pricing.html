@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Favicon-->
 	<link rel="shortcut icon" href="img/fav.png">
+	<link rel="icon" type="image/x-icon" href="img\logo.png">
 	<!-- Author Meta -->
 	<meta name="author" content="colorlib">
 	<!-- Meta Description -->
@@ -87,7 +88,7 @@
 		<div class="container">
 			<div class="row d-flex align-items-center justify-content-center">
 				<div class="about-content col-lg-12">
-					<h1 class="text-white">
+					<h1 class="text-white autofont">
 						Tra Cứu Huyệt
 					</h1>
 					<p class="text-white link-nav"><a href="index.html">Home </a> <span
@@ -118,7 +119,6 @@
 					<div class="form-group">
 						<label for="inputHour">Chọn Giờ (1 - 24H):</label>
 						<select id="inputHour" class="form-control">
-							<option value="" disabled selected>Giờ</option>
 						</select>
 					</div>
 					<!-- Nút Tính Toán -->
@@ -133,9 +133,11 @@
 				<div class="col-lg-12 text-center">
 					<div id="currentDate" class="result"></div>
 					<div id="currentHour" class="result"></div>
+					<div id="infokiengchamcuu" class="result"></div>
 					<div id="infoTyluuchu" class="result"></div>
 					<div id="infoHuyetmo" class="result"></div>
 					<div id="infoHuyetdong" class="result"></div>
+					<div id="infokiengngayam" class="result"></div>
 				</div>
 			</div>
 		</div>
@@ -218,6 +220,8 @@
 	<script src="data/giomohuyet/ngaynham.js"></script>
 	<script src="data/giomohuyet/ngayquy.js"></script>
 	<script src="data/giomohuyet/caphuyetmodong.js"></script>
+	<script src="data/luuykiengky.js/kiengngayam.js"></script>
+	<script src="data/luuykiengky.js/kiengchamcuu.js"></script>
 	<script src="js/lookup.js"></script>
 </body>
 
