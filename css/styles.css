@@ -32,7 +32,6 @@ body {
 }
 
 .result {
-    background-color: #f8f9fa; /* Màu nền nhẹ cho các ô kết quả */
     color: #333; /* Màu chữ tối */
     font-size: 18px; /* Kích thước chữ */
     font-weight: 500;
