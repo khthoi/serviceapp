@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Tạo danh sách giờ từ 1 đến 24
     const hourSelect = document.getElementById("inputHour");
-    for (let i = 1; i <= 24; i++) {
+    for (let i = 0; i <= 23; i++) {
         const option = document.createElement("option");
         option.value = i;
         option.textContent = i;
