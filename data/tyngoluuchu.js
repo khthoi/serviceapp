@@ -1,4 +1,4 @@
-const data = {
+var data = {
     "Tý": {
         "Giáp": "",
         "Ất": "Tiền Cốc",
@@ -144,5 +144,3 @@ const data = {
         "Quý": "Dũng Tuyền"
     }
 }
-
-export { data };

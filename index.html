@@ -68,28 +68,16 @@
 						<li><a href="about.html">About</a></li>
 						<li><a href="services.html">Services</a></li>
 						<li><a href="opening-hour.html">Opening Hour </a></li>
-						<li class="menu-has-children"><a href="">Blog</a>
-							<ul>
-								<li><a href="blog-home.html">Blog Home</a></li>
-								<li><a href="blog-single.html">Blog Single</a></li>
-								<li class="menu-has-children"><a href="">Level 2</a>
-									<ul>
-										<li><a href="#">Item One</a></li>
-										<li><a href="#">Item Two</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
 						<li><a href="pricing.html">Pricing</a></li>
-						<li><a href="elements.html">Elements</a></li>
 						<li><a href="contact.html">Contact</a></li>
 					</ul>
 				</nav><!-- #nav-menu-container -->
 				<div class="menu-social-icons">
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-					<a href="#"><i class="fa fa-dribbble"></i></a>
-					<a href="#"><i class="fa fa-behance"></i></a>
+					<a href="https://www.facebook.com/phuoc.trantan.1"><i class="fa fa-facebook"></i></a>
+					<a href="https://www.youtube.com/@MrPhuoctran"><i class="fa fa-youtube"></i></a>
+					<a href="https://zalo.me/0976552723"><i class="fa fa-phone"></i></a>
+					<a href="mailto:phuoctrantan@gmail.com"><i class="fa fa-envelope"></i></a>
+
 				</div>
 			</div>
 		</div>
@@ -102,17 +90,19 @@
 			<div class="row fullscreen d-flex justify-content-center align-items-center">
 				<div class="banner-content col-lg-9 col-md-12 justify-content-center">
 					<h3 class="text-uppercase" style="color: white;font-family: Montserrat;">ghi chú huyệt</h3><br>
-					<h3 class="text-uppercase" style="color: white;font-family: Montserrat;">Current Time</h3><br>
-					<h4 class="text-uppercase" style="color: white;font-family: Montserrat;">20:45:54 16/6/2024</h4>
+					<h4 style="color: white;font-family: Montserrat;" id="currentDate">20:45:54 16/6/2024</h4>
 					<hr>
-					<h3 style="color: white;font-family: Montserrat;">
+					<h3 style="color: white;font-family: Montserrat;" id="currentHour">
 						Giờ Dậu Ngày Bính Tí Năm Nhâm Thìn
 					</h3><br>
-					<p class="text-white mx-auto" style="font-size: larger;font-family: Montserrat;">
+					<p class="text-white mx-auto" style="font-size: larger;font-family: Montserrat;" id="infoTyluuchu">
 						Tý Ngọ Lưu Chú:....
 					</p>
-					<p class="text-white mx-auto" style="font-size: larger;font-family: Montserrat;">
+					<p class="text-white mx-auto" style="font-size: larger;font-family: Montserrat;" id="infoHuyetmo">
 						Các huyệt mở hiện tại:....
+					</p>
+					<p class="text-white mx-auto" style="font-size: larger;font-family: Montserrat;" id="infoHuyetdong">
+						Các huyệt đóng hiện tại:....
 					</p>
 				</div>
 			</div>
@@ -131,14 +121,12 @@
 					</p>
 					<div class="date-list d-flex flex-row justify-content-center">
 						<ul class="colm-1">
-							<li>Monday - Friday</li>
-							<li>Saturday</li>
-							<li>Sunday</li>
+							<li>Thứ Hai - Thứ Sáu</li>
+							<li>Thứ Bảy - Chủ Nhật</li>
 						</ul>
 						<ul class="colm-2">
-							<li><span>:</span> 10:00am to 05:00pm</li>
-							<li><span>:</span> 12:00am to 03:00pm</li>
-							<li><span>:</span> closed</li>
+							<li><span>:</span> 8:00am to 05:00pm</li>
+							<li><span>:</span> 8:00am to 03:00pm</li>
 						</ul>
 					</div>
 				</div>
@@ -153,7 +141,7 @@
 		<div class="container">
 			<div class="row d-flex justify-content-center">
 				<div class="col-md-12 pb-40 header-text text-center">
-					<h1 class="pb-10">CHÂM CỨU LÀ BIỆN PHÁP CHỮA BỆNH HIỆU QUẢ</h1>
+					<h1 class="pb-10" style="font-family: Montserrat;">CHÂM CỨU LÀ BIỆN PHÁP CHỮA BỆNH HIỆU QUẢ</h1>
 					<p>
 						Sử dụng Huyền Học để chữa bệnh và chế thuốc
 					</p>
@@ -273,7 +261,18 @@
 	<script src="js/mail-script.js"></script>
 	<script src="js/main.js"></script>
 	<script src="data/tyngoluuchu.js"></script>
-	<script type="module" src="js/excutingdate.js"></script>
+	<script src="data/giomohuyet/ngayat.js"></script>
+	<script src="data/giomohuyet/ngaygiap.js"></script>
+	<script src="data/giomohuyet/ngaybinh.js"></script>
+	<script src="data/giomohuyet/ngaydinh.js"></script>
+	<script src="data/giomohuyet/ngayky.js"></script>
+	<script src="data/giomohuyet/ngaymau.js"></script>
+	<script src="data/giomohuyet/ngaycanh.js"></script>
+	<script src="data/giomohuyet/ngaytan.js"></script>
+	<script src="data/giomohuyet/ngaynham.js"></script>
+	<script src="data/giomohuyet/ngayquy.js"></script>
+	<script src="data/giomohuyet/caphuyetmodong.js"></script>
+	<script src="js/excutingdate.js"></script>
 </body>
 
 </html>

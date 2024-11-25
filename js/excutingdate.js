@@ -1,4 +1,5 @@
-import { data } from "/data/tyngoluuchu.js";  // Kết nối với data từ file tyngoluuchu.js
+// import { data } from "/data/tyngoluuchu.js";  // Kết nối với data từ file tyngoluuchu.js
+
 // Danh sách Thiên Can và Địa Chi
 const CAN = ["Canh", "Tân", "Nhâm", "Quý", "Giáp", "Ất", "Bính", "Đinh", "Mậu", "Kỷ"];
 const CHI = ["Tý", "Sửu", "Dần", "Mão", "Thìn", "Tỵ", "Ngọ", "Mùi", "Thân", "Dậu", "Tuất", "Hợi"];
@@ -33,7 +34,9 @@ function getCurrentDate() {
         day: today.getDate(),
         month: today.getMonth() + 1, // Lấy tháng (0-11, nên cộng thêm 1)
         year: today.getFullYear(),
-        hours: today.getHours()
+        hours: today.getHours(),
+        minute: today.getMinutes(),
+        second: today.getSeconds()
     };
 }
 
@@ -49,33 +52,51 @@ function getCanChiByHour() {
     return diaChiGio;
 }
 
-
+// Hàm kiểm tra dữ liệu từ data (cần dữ liệu từ file tyngoluuchu.js)
 function getInfoFromData(diaChi, thienCan) {
     // Kiểm tra nếu tồn tại
     if (data[diaChi]?.[thienCan]) {
         return data[diaChi][thienCan];
     } else {
-        console.log(`Không tìm thấy dữ liệu với ${diaChi} và ${thienCan}`);
-        return "Không có dữ liệu";
+        console.log(`Không tìm thấy dữ liệu`);
+        return "Không có";
+    }
+}
+
+// Hàm kiểm tra và xác định huyệt đóng
+function getHuyetDong(huyetMo) {
+    if (huyetPairs[huyetMo]) {
+        return huyetPairs[huyetMo];
+    } else {
+        console.log("Không tìm thấy huyệt tương ứng");
+        return "Không có";
     }
 }
 
 // Hàm chính để tính Thiên Can và Địa Chi cho ngày hiện tại
 function main() {
-    const { day, month, year, hours } = getCurrentDate();
+    const { day, month, year, hours, minute, second } = getCurrentDate();
     const { thienCan, diaChi } = getCanChi(day, month, year);
-
+    var NgayCanChi = thienCan + " " + diaChi;  // Nối thienCan và diaChi với dấu cách
+    
     // Tính Địa Chi cho giờ hiện tại
     const GioDiaChi = getCanChiByHour();
-    // In ra thông tin ngày, giờ và Địa Chi của giờ hiện tại
-    console.log(`Ngày hiện tại là: ${day}-${month}-${year} Tức ngày ${thienCan} ${diaChi}`);
-    console.log(`Giờ hiện tại: ${hours} - Tức: ${GioDiaChi}`);
+
+    // In ra thông tin ngày và giờ vào các phần tử HTML
+    document.getElementById("currentDate").innerHTML = `Ngày ${day} Tháng ${month} Năm ${year}<br><br> Tức ngày ${thienCan} ${diaChi}`;
+    document.getElementById("currentHour").innerHTML = `Giờ hiện tại: ${hours}:${minute} - Tức Giờ ${GioDiaChi}`;
 
     // Tra cứu thông tin từ dữ liệu
     const info = getInfoFromData(GioDiaChi, thienCan);
-    console.log(`Thông tin về Tý Ngọ Lưu Chú Hiện Tại: ${info}`);
+    document.getElementById("infoTyluuchu").innerHTML = `Huyệt Mở Theo Tý Ngọ Lưu Chú: ${info}`;
+    
+    const info2 = getInfoFromData(NgayCanChi, GioDiaChi);
+    document.getElementById("infoHuyetmo").innerHTML = `Huyệt Mở Theo Linh Quy Bát Pháp: ${info2}`;
+
+    // Tính huyệt đóng và hiển thị kết quả
+    const huyetDong = getHuyetDong(info2);
+    document.getElementById("infoHuyetdong").innerHTML = `Huyệt Đóng Theo Linh Quy Bát Pháp: ${huyetDong}`;
 }
 
 // Gọi hàm chính
 main();
-
