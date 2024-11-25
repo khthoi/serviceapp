@@ -247,17 +247,30 @@ function main() {
     document.getElementById("currentDate").innerHTML = `Ngày ${day} Tháng ${month} Năm ${year}<br><br> Tức ngày ${thienCan} ${diaChi}`;
     document.getElementById("currentHour").innerHTML = `${hours}:${formattedMinute} - Tức Giờ ${GioDiaChi}`;
 
-    // Tra cứu thông tin từ dữ liệu
-    const info = getInfoFromData(GioDiaChi, thienCan);
-    document.getElementById("infoTyluuchu").innerHTML = `Huyệt Mở Theo Tý Ngọ Lưu Chú:<br>${info}`;
+    // Kiểm tra chiều rộng màn hình
+    if (window.innerWidth < 430) {
+        // Tra cứu thông tin từ dữ liệu
+        const info = getInfoFromData(GioDiaChi, thienCan);
+        document.getElementById("infoTyluuchu").innerHTML = `Huyệt Mở Theo Tý Ngọ Lưu Chú:<br>${info}`;
 
-    const info2 = getInfoFromData(NgayCanChi, GioDiaChi);
-    document.getElementById("infoHuyetmo").innerHTML = `Huyệt Mở Theo Linh Quy Bát Pháp:<br> ${info2}`;
+        const info2 = getInfoFromData(NgayCanChi, GioDiaChi);
+        document.getElementById("infoHuyetmo").innerHTML = `Huyệt Mở Theo Linh Quy Bát Pháp:<br> ${info2}`;
 
-    // Tính huyệt đóng và hiển thị kết quả
-    const huyetDong = getHuyetDong(info2);
-    document.getElementById("infoHuyetdong").innerHTML = `Huyệt Đóng Theo Linh Quy Bát Pháp:<br> ${huyetDong}`;
+        // Tính huyệt đóng và hiển thị kết quả
+        const huyetDong = getHuyetDong(info2);
+        document.getElementById("infoHuyetdong").innerHTML = `Huyệt Đóng Theo Linh Quy Bát Pháp:<br> ${huyetDong}`;
+    } else {
+        // Tra cứu thông tin từ dữ liệu
+        const info = getInfoFromData(GioDiaChi, thienCan);
+        document.getElementById("infoTyluuchu").innerHTML = `Huyệt Mở Theo Tý Ngọ Lưu Chú: ${info}`;
 
+        const info2 = getInfoFromData(NgayCanChi, GioDiaChi);
+        document.getElementById("infoHuyetmo").innerHTML = `Huyệt Mở Theo Linh Quy Bát Pháp: ${info2}`;
+
+        // Tính huyệt đóng và hiển thị kết quả
+        const huyetDong = getHuyetDong(info2);
+        document.getElementById("infoHuyetdong").innerHTML = `Huyệt Đóng Theo Linh Quy Bát Pháp: ${huyetDong}`;
+    }
     // Xét ngày âm hiện tại
     let lunarDate = clsSolar2Lunar.convertSolar2Lunar(day, month, year, timeZone);
     const lunardate = lunarDate[0];
