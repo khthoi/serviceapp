@@ -272,5 +272,6 @@ function main() {
     // In ra Bộ vị kiêng kỵ hiện tại 
     document.getElementById("infokiengngayam").innerHTML = `Bộ vị kiêng châm: ${info3}`;
     // Xét ngày kiêng châm cứu hiện tại
-    checkforbidday(month, diaChi);
+    const lunarMonth = lunarDate[1];
+    checkforbidday(lunarMonth, diaChi);
 }
