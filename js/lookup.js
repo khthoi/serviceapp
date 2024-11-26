@@ -219,9 +219,9 @@ function getlunardateFromData(day) {
     }
 }
 
-function checkforbidday(month, day) {
-    console.log(`Checking for: month = ${month}, day = ${day}`);
-    if (kiengcham[month] == day) {
+// Hàm xét ngày kiêng châm cứu
+function checkForbidDay(month, day) {
+    if (kiengcham[month] && kiengcham[month].includes(day)) {
         document.getElementById("infokiengchamcuu").innerHTML = `Ngày Hôm Nay Kiêng Châm Cứu`;
     } else {
         document.getElementById("infokiengchamcuu").innerHTML = ``;
@@ -273,5 +273,5 @@ function main() {
     document.getElementById("infokiengngayam").innerHTML = `Bộ vị kiêng châm: ${info3}`;
     // Xét ngày kiêng châm cứu hiện tại
     const lunarMonth = lunarDate[1];
-    checkforbidday(lunarMonth, diaChi);
+    checkForbidDay(lunarMonth, diaChi);
 }

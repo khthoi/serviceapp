@@ -222,13 +222,14 @@ function getlunardateFromData(day) {
 }
 
 // Hàm xét ngày kiêng châm cứu
-function checkforbidday(month, day) {
-    if (kiengcham[month] == day) {
+function checkForbidDay(month, day) {
+    if (kiengcham[month] && kiengcham[month].includes(day)) {
         document.getElementById("infokiengchamcuu").innerHTML = `Ngày Hôm Nay Kiêng Châm Cứu`;
     } else {
         document.getElementById("infokiengchamcuu").innerHTML = ``;
     }
 }
+
 // Hàm chính để tính Thiên Can và Địa Chi cho ngày hiện tại
 function main() {
     const timeZone = 7;
@@ -279,7 +280,7 @@ function main() {
     document.getElementById("infokiengngayam").innerHTML = `Bộ vị kiêng châm: ${info3}`;
     // Xét ngày kiêng châm cứu hiện tại
     const lunarMonth = lunarDate[1]
-    checkforbidday(lunarMonth, diaChi);
+    checkForbidDay(lunarMonth, diaChi);
 }
 
 
